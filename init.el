@@ -18,7 +18,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/better-defaults")
 (require 'better-defaults)
-(load-theme 'zenburn t)
+
 
 (require 'package)
 (setq package-archives (cons '("tromey" . "http://tromey.com/elpa/") package-archives))
@@ -28,6 +28,8 @@
 
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 (setq el-get-sources
@@ -35,4 +37,7 @@
                :type elpa
                :load "ruby-mode.el")
         (:name inf-ruby :type elpa)
-        (:name css-mode :type elpa)))
+        (:name css-mode :type elpa)
+        (:name zenburn-theme :type melpa)))
+(el-get 'sync)
+(load-theme 'zenburn t)
