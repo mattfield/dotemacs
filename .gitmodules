@@ -4,3 +4,6 @@
 [submodule "themes/zenburn"]
 	path = themes/zenburn
 	url = https://github.com/bbatsov/zenburn-emacs.git
+[submodule "el-get"]
+	path = el-get
+	url = git://github.com/dimitri/el-get.git

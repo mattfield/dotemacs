@@ -1,0 +1,49 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/mattfield/src/morebeans/app/views/" . "homepage/")
+ ("/Users/mattfield/src/morebeans/app/" . "views/")
+ ("/Users/mattfield/src/morebeans/" . "app/")
+ ("/Users/mattfield/src/" . "morebeans/")
+ ("/Users/mattfield/" . ".emacs.d/")
+ ("/" . "usr/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/mattfield/.emacs.d/"
+ "/Users/mattfield/src/morebeans/app/views/homepage/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "index.html.haml"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/mattfield/.emacs.d/" (21000 52147 0 0) "themes/" "places" "init.el~" "init.el" "ido.last" "elpa/" "el-get/" "better-defaults/" "backups/" "auto-save-list/" ".gitmodules" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/mattfield/" (21000 52149 0 0) "TUTORIAL~" "TUTORIAL" "src/" "quicklisp.lisp" "quicklisp/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "clones/" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump" ".vimrc" ".viminfo" ".vim/" ".Trash/" ".tmux.conf" ".ssh/" ".slime/" ".sbclrc" ".relish" ".profile" ".oh-my-zsh/" ".npm/" ".NERDTreeBookmarks" ".m2/" ".lein/" ".gvimrc" ".gitconfig" ".ghc/" ".gemrc" ".gem/" ".exercism" ".erc/" ".emacs.d/" ".DS_Store" ".dropbox/" ".config/" ".coffee_history" ".CFUserTextEncoding" ".cache/" ".bash_history" ".aliases~" ".aliases" "#TUTORIAL#" "../" "./")
+
+ ("/Users/mattfield/src/morebeans/app/views/homepage/" (20958 40094 0 0) "index.html.haml" "../" "./")
+
+ ("/Users/mattfield/src/morebeans/app/views/" (20958 40094 0 0) "partials/" "layouts/" "info/" "homepage/" "errors/" "editorial/" "../" "./")
+
+ ("/Users/mattfield/src/morebeans/app/assets/" (20958 40094 0 0) "stylesheets/" "javascripts/" "images/" "fonts/" "../" "./")
+
+ ("/Users/mattfield/src/morebeans/app/" (20958 40094 0 0) "views/" "models/" "mailers/" "helpers/" "controllers/" "assets/" "../" "./")
+
+ ("/Users/mattfield/src/morebeans/" (20958 40094 0 0) "vendor/" "test/" "spec/" "script/" "README.rdoc" "Rakefile" "public/" "Procfile" "log/" "lib/" "Gemfile.lock" "Gemfile" "db/" "config.ru" "config/" "CHANGELOG.md" "Capfile" "app/" ".yardopts" ".travis.yml" ".rvmrc" ".ruby-version" ".rspec" ".pryrc" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/mattfield/src/" (20974 50935 0 0) "youth100/" "yms/" "voxburner/" "thebeansgroup/" "the-boxen/" "swagger-ui/" "studentbeans/" "sb-styleguide/" "puppet-thebeansgroup/" "morebeans/" "meowmail/" "mattfield.github.io/" "local/" "liveboard/" "freshersfields/" "exercism/" "editorial/" "cobblr/" "authentication/" ".DS_Store" "../" "./")
+
+ ("/usr/" (20958 39979 0 0) "X11R6/" "X11/" "standalone/" "share/" "sbin/" "local/" "llvm-gcc-4.2/" "libexec/" "lib/" "include/" "bin/" "../" "./")
+
+ ("/Users/" (20958 36534 0 0) "Shared/" "mattfield/" "Guest/" ".localized" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
