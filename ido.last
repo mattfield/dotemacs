@@ -2,8 +2,10 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/Users/mattfield/src/morebeans/app/assets/stylesheets/" . "modules/")
+ ("/Users/mattfield/src/morebeans/app/assets/" . "stylesheets/")
  ("/Users/mattfield/src/morebeans/app/views/" . "homepage/")
- ("/Users/mattfield/src/morebeans/app/" . "views/")
+ ("/Users/mattfield/src/morebeans/app/" . "assets/")
  ("/Users/mattfield/src/morebeans/" . "app/")
  ("/Users/mattfield/src/" . "morebeans/")
  ("/Users/mattfield/" . ".emacs.d/")
@@ -13,20 +15,31 @@
 ;; ----- ido-work-directory-list -----
 (
  "/Users/mattfield/.emacs.d/"
+ "/Users/mattfield/src/morebeans/app/assets/stylesheets/modules/"
+ "/Users/mattfield/src/morebeans/config/"
  "/Users/mattfield/src/morebeans/app/views/homepage/"
 )
 
 ;; ----- ido-work-file-list -----
 (
  "init.el"
+ "ido.last"
+ "_article-meta.css.scss"
+ "application.rb"
  "index.html.haml"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/mattfield/.emacs.d/" (21000 52147 0 0) "themes/" "places" "init.el~" "init.el" "ido.last" "elpa/" "el-get/" "better-defaults/" "backups/" "auto-save-list/" ".gitmodules" ".git/" ".DS_Store" "../" "./")
+ ("/Users/mattfield/.emacs.d/" (21000 53828 0 0) "themes/" "places" "init.el~" "init.el" "ido.last" "elpa/" "el-get/" "better-defaults/" "backups/" "auto-save-list/" ".gitmodules" ".git/" ".DS_Store" "../" "./")
 
- ("/Users/mattfield/" (21000 52149 0 0) "TUTORIAL~" "TUTORIAL" "src/" "quicklisp.lisp" "quicklisp/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "clones/" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump" ".vimrc" ".viminfo" ".vim/" ".Trash/" ".tmux.conf" ".ssh/" ".slime/" ".sbclrc" ".relish" ".profile" ".oh-my-zsh/" ".npm/" ".NERDTreeBookmarks" ".m2/" ".lein/" ".gvimrc" ".gitconfig" ".ghc/" ".gemrc" ".gem/" ".exercism" ".erc/" ".emacs.d/" ".DS_Store" ".dropbox/" ".config/" ".coffee_history" ".CFUserTextEncoding" ".cache/" ".bash_history" ".aliases~" ".aliases" "#TUTORIAL#" "../" "./")
+ ("/Users/mattfield/" (21000 53917 0 0) "TUTORIAL~" "TUTORIAL" "src/" "quicklisp.lisp" "quicklisp/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "clones/" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump" ".vimrc" ".viminfo" ".vim/" ".Trash/" ".tmux.conf" ".ssh/" ".slime/" ".sbclrc" ".relish" ".profile" ".oh-my-zsh/" ".npm/" ".NERDTreeBookmarks" ".m2/" ".lein/" ".gvimrc" ".gitconfig" ".ghc/" ".gemrc" ".gem/" ".exercism" ".erc/" ".emacs.d/" ".DS_Store" ".dropbox/" ".config/" ".coffee_history" ".CFUserTextEncoding" ".cache/" ".bash_history" ".aliases~" ".aliases" "#TUTORIAL#" "../" "./")
+
+ ("/Users/mattfield/src/morebeans/app/assets/stylesheets/modules/" (20958 40094 0 0) "_share-tools.css.scss" "_search.css.scss" "_nav.css.scss" "_media.css.scss" "_listing_header.css.scss" "_footer.css.scss" "_figure.css.scss" "_fan_links.css.scss" "_fan_link_strip.css.scss" "_cross-promo.css.scss" "_author.css.scss" "_article.css.scss" "_article-meta.css.scss" "_all.css.scss" "_actions.css.scss" "../" "./")
+
+ ("/Users/mattfield/src/morebeans/app/assets/stylesheets/" (20958 40094 0 0) "theme/" "state/" "modules/" "base/" "application.css.scss" "_helpers.css.scss" "_colors.css.scss" "../" "./")
+
+ ("/Users/mattfield/src/morebeans/config/" (20958 40094 0 0) "unicorn.rb" "solr/" "routes.rb" "newrelic.yml" "main_navigation.rb" "log_files.yml" "locales/" "initializers/" "environments/" "environment.rb" "deploy.rb" "deploy/" "database.yml" "database.travis.yml" "boot.rb" "application.rb" "../" "./")
 
  ("/Users/mattfield/src/morebeans/app/views/homepage/" (20958 40094 0 0) "index.html.haml" "../" "./")
 

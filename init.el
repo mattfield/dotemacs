@@ -23,20 +23,11 @@
 
 (require 'package)
 (setq package-archives (cons '("tromey" . "http://tromey.com/elpa/") package-archives))
-(package-initialize)
-
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 (add-to-list 'load-path "~/.emacs.d/el-get")
 (require 'el-get)
 
-(require 'haml-mode)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
 
-(setq el-get-sources
-      '((:name ruby-mode
-               :type elpa
-               :load "ruby-mode.el")
-        (:name inf-ruby :type elpa)
-        (:name css-mode :type elpa)))
-(el-get 'sync)

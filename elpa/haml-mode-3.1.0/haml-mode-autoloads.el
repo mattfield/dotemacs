@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "haml-mode" "haml-mode.el" (21000 52045 0 0))
+;;;### (autoloads nil "haml-mode" "haml-mode.el" (21000 54539 0 0))
 ;;; Generated autoloads from haml-mode.el
 
 (autoload 'haml-mode "haml-mode" "\
@@ -13,7 +13,12 @@ Major mode for editing Haml files.
 
 \(fn)" t nil)
 
-(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
+(add-to-list 'auto-mode-alist '("\\.haml\\'" . haml-mode))
+
+;;;***
+
+;;;### (autoloads nil nil ("haml-mode-pkg.el") (21000 54539 913313
+;;;;;;  0))
 
 ;;;***
 
