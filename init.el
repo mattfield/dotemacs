@@ -18,7 +18,6 @@
 
 (add-to-list 'load-path "~/.emacs.d/better-defaults")
 (require 'better-defaults)
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'zenburn t)
 
 (require 'package)
@@ -31,3 +30,9 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
+(setq el-get-sources
+      '((:name ruby-mode
+               :type elpa
+               :load "ruby-mode.el")
+        (:name inf-ruby :type elpa)
+        (:name css-mode :type elpa)))
