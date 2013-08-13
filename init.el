@@ -19,7 +19,6 @@
 (add-to-list 'load-path "~/.emacs.d/better-defaults")
 (require 'better-defaults)
 
-
 (require 'package)
 (setq package-archives (cons '("tromey" . "http://tromey.com/elpa/") package-archives))
 
@@ -38,6 +37,10 @@
                :load "ruby-mode.el")
         (:name inf-ruby :type elpa)
         (:name css-mode :type elpa)
-        (:name zenburn-theme :type melpa)))
+        (:name zenburn-theme :type melpa)
+        (:name haml-mode :type elpa)
+        (:name magit :type marmalade)
+        (:name sass-mode)
+        (:name undo-tree)))
 (el-get 'sync)
 (load-theme 'zenburn t)
