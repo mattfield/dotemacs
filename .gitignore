@@ -1,6 +1,9 @@
-places
-ido.last
-auto-save-list/
-backups/
-elpa/
-url/
+/places
+/ido.last
+/auto-save-list/
+/backups/
+/elpa/
+/url/
+/.#ido.last
+/eshell/history
+/eshell/lastdir
