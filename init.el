@@ -59,3 +59,6 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
+
+;; Set RET to newline AND indent
+(define-key global-map (kbd "RET") 'newline-and-indent)
