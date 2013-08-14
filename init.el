@@ -1,3 +1,4 @@
+;; Will probably need altering machine-dependant 
 (push "/opt/boxen/homebrew/bin" exec-path)
 
 (setq make-backup-files nil)
@@ -16,21 +17,28 @@
 (set-fringe-style -1)
 (tooltip-mode -1)
 
+;; Get some better-defaults! Added as git submodule
 (add-to-list 'load-path "~/.emacs.d/better-defaults")
 (require 'better-defaults)
 
+;; Grabbin' Emacs 24 packaging 
 (require 'package)
 (setq package-archives (cons '("tromey" . "http://tromey.com/elpa/") package-archives))
 
+;; Use el-get
 (add-to-list 'load-path "~/.emacs.d/el-get")
 (require 'el-get)
 
+;; Adding additional package directories
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+;; init package with all package repos
 (package-initialize)
 
+;; Grab all yo packages
 (setq el-get-sources
       '((:name ruby-mode
                :type elpa
@@ -48,6 +56,7 @@
         (:name js2-mode :type elpa)
         (:name coffee-mode :type elpa)))
 (el-get 'sync)
+
 ;; Smush together three themes for something very pleasing
 (load-theme 'zenburn)
 (load-theme 'twilight)
@@ -56,6 +65,7 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
+;; A more helpful M-x
 (require 'smex)
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
@@ -63,6 +73,7 @@
 ;; Old M-x binding
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+;; Ensure .coffee files use coffee-mode
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
 
 ;; Set RET to newline AND indent
