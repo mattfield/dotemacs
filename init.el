@@ -45,9 +45,6 @@
                :load "ruby-mode.el")
         (:name inf-ruby :type elpa)
         (:name css-mode :type elpa)
-        (:name zenburn-theme :type elpa)
-        (:name twilight-theme :type elpa)
-        (:name monokai-theme :type elpa)
         (:name haml-mode :type elpa)
         (:name magit :type marmalade)
         (:name sass-mode :type elpa)
@@ -57,10 +54,9 @@
         (:name coffee-mode :type elpa)))
 (el-get 'sync)
 
-;; Smush together three themes for something very pleasing
-(load-theme 'zenburn)
-(load-theme 'twilight)
-(load-theme 'monokai)
+(unless (package-installed-p 'zenburn-theme)
+  (package-install 'zenburn-theme))
+(load-theme 'zenburn t)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
