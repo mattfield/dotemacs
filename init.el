@@ -127,3 +127,11 @@ point reaches the beginning or end of buffer, stop."
 ;; Enable flycheck globally
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
+;; Highlight comment annotations
+(defun font-lock-comment-annotations ()
+  "Highlight a bunch of well known comment annotations"
+  (font-lock-add-keywords nil
+                          '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\):" 1 font-lock-warning-face t))))
+
+(add-hook 'prog-mode-hook 'font-lock-comment-annotations)
+
