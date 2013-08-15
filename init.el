@@ -51,7 +51,8 @@
         (:name undo-tree :type elpa)
         (:name smex :type elpa)
         (:name js2-mode :type elpa)
-        (:name coffee-mode :type elpa)))
+        (:name coffee-mode :type elpa)
+        (:name flycheck :type marmalade)))
 (el-get 'sync)
 
 (unless (package-installed-p 'zenburn-theme)
@@ -122,3 +123,7 @@ point reaches the beginning or end of buffer, stop."
 ;; Remap C-a to `smarter-move-beginning-of-line`
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
+
+;; Enable flycheck globally
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
