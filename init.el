@@ -3,7 +3,8 @@
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
-(setq-default tab-width 2)
+(setq-default c-basic-offset 2)
+(setq-default default-tab-width 2)
 (setq-default indent-tabs-mode nil)
 (setq inhibit-startup-message nil)
 
@@ -18,7 +19,7 @@
 (tooltip-mode -1)
 
 ;; Get some better-defaults! Added as git submodule
-(add-to-list 'load-path "~/.emacs.d/better-defaults")
+(add-to-list 'load-path "~/.emacs.d/better-defaults/")
 (require 'better-defaults)
 
 ;; Grabbin' Emacs 24 packaging 
@@ -72,6 +73,16 @@
 
 ;; Ensure .coffee files use coffee-mode
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+
+;; coffee-mode
+(defun coffee-custom ()
+  "coffee-mode hook"
+  (make-local-variable 'tab-width)
+  (set 'tab-width 2)
+  (set 'coffee-tab-width 2))
+(add-hook 'coffee-mode-hook
+          '(lambda() (coffee-custom)))
 
 ;; Set RET to newline AND indent
 (define-key global-map (kbd "RET") 'newline-and-indent)
