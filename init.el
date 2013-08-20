@@ -147,6 +147,7 @@ point reaches the beginning or end of buffer, stop."
 
 (add-hook 'prog-mode-hook 'font-lock-comment-annotations)
 
+ 
 ;; Highlight current line
 (global-hl-line-mode 1)
 
@@ -160,16 +161,13 @@ point reaches the beginning or end of buffer, stop."
 ;; that you can always see what's happening.
 (setq eval-expression-print-level nil)
 
-;; Magit
-(defun magit-status ()
-  "Restores previous window config and kills magit buffer"
-  (interactive)
-  (kill-buffer))
-
 ;; Expand region (SO GOOD)
 (add-to-list 'load-path "~/.emacs.d/expand-region/")
 (require 'expand-region)
+(global-set-key (kbd "C-\\") 'er/expand-region)
 (pending-delete-mode t)
+
+
 
 (provide 'init)
 
