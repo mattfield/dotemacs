@@ -53,7 +53,8 @@
         (:name smex :type elpa)
         (:name js2-mode :type elpa)
         (:name coffee-mode :type elpa)
-        (:name flycheck :type marmalade)))
+        (:name flycheck :type marmalade)
+        (:name smooth-scrolling :type elpa)))
 (el-get 'sync)
 
 (unless (package-installed-p 'zenburn-theme)
@@ -94,8 +95,8 @@ Position the cursor at its beginning, according to the current mode"
   (move-end-of-line nil)
   (newline-and-indent))
 
-(global-set-key [(shift return)] 'smart-open-line)
-(global-set-key (kbd "M-o") 'smart-open-line)
+;;(global-set-key [(shift return)] 'smart-open-line)
+;;(global-set-key (kbd "M-o") 'smart-open-line)
 
 (defun smart-open-line-above ()
   "Insert an empty line above the current line.
@@ -146,3 +147,5 @@ point reaches the beginning or end of buffer, stop."
 
 (add-hook 'prog-mode-hook 'font-lock-comment-annotations)
 
+;; Highlight current line
+(global-hl-line-mode 1)
