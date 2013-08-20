@@ -27,7 +27,7 @@
 (setq package-archives (cons '("tromey" . "http://tromey.com/elpa/") package-archives))
 
 ;; Use el-get
-(add-to-list 'load-path "~/.emacs.d/el-get")
+(add-to-list 'load-path "~/.emacs.d/el-get/")
 (require 'el-get)
 
 ;; Adding additional package directories
@@ -149,3 +149,28 @@ point reaches the beginning or end of buffer, stop."
 
 ;; Highlight current line
 (global-hl-line-mode 1)
+
+;; Auto refresh buffers!
+(global-auto-revert-mode 1)
+
+;; Lines should be 80 characters wide
+(setq fill-column 80)
+
+;; Nic says eval-expression-print-level needs to be set to nil (turned off) so
+;; that you can always see what's happening.
+(setq eval-expression-print-level nil)
+
+;; Magit
+(defun magit-status ()
+  "Restores previous window config and kills magit buffer"
+  (interactive)
+  (kill-buffer))
+
+;; Expand region (SO GOOD)
+(add-to-list 'load-path "~/.emacs.d/expand-region/")
+(require 'expand-region)
+(pending-delete-mode t)
+
+(provide 'init)
+
+;;; init.el ends here
