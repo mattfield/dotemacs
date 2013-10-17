@@ -73,8 +73,6 @@
 ;; Old M-x binding
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
-(require 'coffee-mode)
-
 ;; Ensure .coffee files use coffee-mode
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
