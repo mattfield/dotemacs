@@ -20,6 +20,7 @@
 
 ;; Get some better-defaults! Added as git submodule
 (add-to-list 'load-path "~/.emacs.d/better-defaults/")
+(add-to-list 'load-path "~/.emacs.d/vendor/js3-mode/")
 (require 'better-defaults)
 
 ;; Grabbin' Emacs 24 packaging 
@@ -51,7 +52,6 @@
         (:name sass-mode :type elpa)
         (:name undo-tree :type elpa)
         (:name smex :type elpa)
-        (:name js2-mode :type elpa)
         (:name coffee-mode :type elpa)
         (:name flycheck :type marmalade)
         (:name smooth-scrolling :type elpa)
@@ -62,8 +62,28 @@
   (package-install 'zenburn-theme))
 (load-theme 'zenburn t)
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+
+
+(setq js3-mirror-mode nil)
+(setq js3-strict-missing-semi-warning nil)
+(setq js3-skip-preprocessor-directives nil)
+(setq js3-allow-keywords-as-property-names nil)
+(setq js3-highlight-external-variables nil)
+(setq js3-indent-level 2)
+
+;; JSON mode as fallback
+(setq js-indent-level 2
+      js-auto-indent-flag nil)
+
+
+(font-lock-add-keywords 'js3-mode
+                        '(("\\[\\|\\]\\|[{}(),.|&;\\?]" . font-lock-preprocessor-face)))
+(require 'json)
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js3-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js3-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+(autoload 'js3-mode "js3-mode" nil t)
 
 ;; A more helpful M-x
 (require 'smex)
@@ -114,7 +134,7 @@ Position the cursor and it's beginning, according to the current mode"
 (global-set-key (kbd "M-S") 'magit-status)
 
 ;; Yas global mode
-(yas-global-mode 1)
+
 
 (defun smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
