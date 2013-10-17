@@ -54,7 +54,8 @@
         (:name js2-mode :type elpa)
         (:name coffee-mode :type elpa)
         (:name flycheck :type marmalade)
-        (:name smooth-scrolling :type elpa)))
+        (:name smooth-scrolling :type elpa)
+        (:name find-file-in-project :type marmalade)))
 (el-get 'sync)
 
 (unless (package-installed-p 'zenburn-theme)
@@ -71,6 +72,8 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; Old M-x binding
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+(require 'coffee-mode)
 
 ;; Ensure .coffee files use coffee-mode
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
@@ -96,7 +99,7 @@ Position the cursor at its beginning, according to the current mode"
   (newline-and-indent))
 
 ;;(global-set-key [(shift return)] 'smart-open-line)
-;;(global-set-key (kbd "M-o") 'smart-open-line)
+(global-set-key (kbd "M-o") 'smart-open-line)
 
 (defun smart-open-line-above ()
   "Insert an empty line above the current line.
@@ -111,6 +114,9 @@ Position the cursor and it's beginning, according to the current mode"
 (global-set-key (kbd "M-O") 'smart-open-line-above)
 
 (global-set-key (kbd "M-S") 'magit-status)
+
+;; Yas global mode
+(yas-global-mode 1)
 
 (defun smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
@@ -137,7 +143,10 @@ point reaches the beginning or end of buffer, stop."
                 'smarter-move-beginning-of-line)
 
 ;; Enable flycheck globally
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; Set C-x f as binding for find-file-in-project
+(global-set-key (kbd "C-x f") 'find-file-in-project)
 
 ;; Highlight comment annotations
 (defun font-lock-comment-annotations ()
@@ -147,8 +156,7 @@ point reaches the beginning or end of buffer, stop."
 
 (add-hook 'prog-mode-hook 'font-lock-comment-annotations)
 
- 
-;; Highlight current line
+ ;; Highlight current line
 (global-hl-line-mode 1)
 
 ;; Auto refresh buffers!
@@ -166,8 +174,6 @@ point reaches the beginning or end of buffer, stop."
 (require 'expand-region)
 (global-set-key (kbd "C-\\") 'er/expand-region)
 (pending-delete-mode t)
-
-
 
 (provide 'init)
 
