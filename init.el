@@ -20,7 +20,7 @@
 
 ;; Get some better-defaults! Added as git submodule
 (add-to-list 'load-path "~/.emacs.d/better-defaults/")
-(add-to-list 'load-path "~/.emacs.d/vendor/js3-mode/")
+(add-to-list 'load-path "~/.emacs.d/vendor/js2-mode/")
 (require 'better-defaults)
 
 ;; Grabbin' Emacs 24 packaging 
@@ -62,28 +62,11 @@
   (package-install 'zenburn-theme))
 (load-theme 'zenburn t)
 
-
-
-(setq js3-mirror-mode nil)
-(setq js3-strict-missing-semi-warning nil)
-(setq js3-skip-preprocessor-directives nil)
-(setq js3-allow-keywords-as-property-names nil)
-(setq js3-highlight-external-variables nil)
-(setq js3-indent-level 2)
-
-;; JSON mode as fallback
-(setq js-indent-level 2
-      js-auto-indent-flag nil)
-
-
-(font-lock-add-keywords 'js3-mode
-                        '(("\\[\\|\\]\\|[{}(),.|&;\\?]" . font-lock-preprocessor-face)))
 (require 'json)
-
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js3-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js3-mode))
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
-(autoload 'js3-mode "js3-mode" nil t)
 
 ;; A more helpful M-x
 (require 'smex)
