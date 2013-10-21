@@ -50,6 +50,7 @@
         (:name haml-mode :type elpa)
         (:name magit :type marmalade)
         (:name sass-mode :type elpa)
+        (:name scss-mode :type elpa)
         (:name undo-tree :type elpa)
         (:name smex :type elpa)
         (:name coffee-mode :type elpa)
@@ -61,6 +62,11 @@
 (unless (package-installed-p 'zenburn-theme)
   (package-install 'zenburn-theme))
 (load-theme 'zenburn t)
+
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(setq scss-compile-at-save nil)
+(setq css-indent-offset 2)
 
 (require 'json)
 (autoload 'js2-mode "js2-mode" nil t)
