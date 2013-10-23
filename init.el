@@ -63,6 +63,11 @@
   (package-install 'zenburn-theme))
 (load-theme 'zenburn t)
 
+(defun byte-recompile ()
+  (interactive)
+  (byte-recompile-directory "~/.emacs.d" 0))
+
+;; Use scss-mode instead of sass-mode for SCSS files
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (setq scss-compile-at-save nil)
@@ -79,8 +84,6 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; Old M-x binding
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;; Ensure .coffee files use coffee-mode
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
@@ -123,7 +126,7 @@ Position the cursor and it's beginning, according to the current mode"
 (global-set-key (kbd "M-S") 'magit-status)
 
 ;; Yas global mode
-
+(setq yas-global-mode 1)
 
 (defun smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
@@ -161,7 +164,8 @@ point reaches the beginning or end of buffer, stop."
   (font-lock-add-keywords nil
                           '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\):" 1 font-lock-warning-face t))))
 
-(add-hook 'prog-mode-hook 'font-lock-comment-annotations)
+(add-hook 'js2-mode-hook 'font-lock-comment-annotations)
+(add-hook 'coffee-mode-hook 'font-lock-comment-annotations)
 
  ;; Highlight current line
 (global-hl-line-mode 1)
