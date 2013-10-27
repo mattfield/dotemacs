@@ -152,9 +152,6 @@ point reaches the beginning or end of buffer, stop."
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
 
-;; Enable flycheck globally
-;;(add-hook 'after-init-hook #'global-flycheck-mode)
-
 ;; Set C-x f as binding for find-file-in-project
 (global-set-key (kbd "C-x f") 'find-file-in-project)
 
@@ -164,8 +161,7 @@ point reaches the beginning or end of buffer, stop."
   (font-lock-add-keywords nil
                           '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\):" 1 font-lock-warning-face t))))
 
-(add-hook 'js2-mode-hook 'font-lock-comment-annotations)
-(add-hook 'coffee-mode-hook 'font-lock-comment-annotations)
+(add-hook 'prog-mode-hook 'font-lock-comment-annotations)
 
  ;; Highlight current line
 (global-hl-line-mode 1)
@@ -185,6 +181,32 @@ point reaches the beginning or end of buffer, stop."
 (require 'expand-region)
 (global-set-key (kbd "C-\\") 'er/expand-region)
 (pending-delete-mode t)
+
+(defun kill-and-join-forward (&optional arg)
+  "Normally, killing the newline between indented lines doesn't
+remove extra spaces caused by indentation. This fixes that"
+  (interactive "P")
+  (if (and (eolp) (not (bolp)))
+      (progn (forward-char 1)
+             (just-one-space 0)
+             (backward-char 1)
+             (kill-line arg))
+    (kill-line arg)))
+
+(global-set-key "\C-k" 'kill-and-join-forward)
+
+(dolist (command '(yank yank-pop))
+  (eval '(defadvice command (after indent-region activate)
+           (and (not current-prefix-arg)
+                (member major-mode '(emacs-lisp mode lisp-mode
+                                                clojure-mode scheme-mode
+                                                haskell-mode ruby-mode
+                                                rspec-mode   python-mode
+                                                c-mode       plain-text-mode
+                                                js2-mode     html-mode
+                                                coffee-mode  haml-mode))
+                (let ((mark-even-if-inactive transient-mark-mode))
+                  (indent-region (region-beginning) (region-end) nil))))))
 
 (provide 'init)
 
