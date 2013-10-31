@@ -61,7 +61,7 @@
         (:name js2-mode :type melpa)
         (:name smex :type melpa)
         (:name nrepl :type melpa)
-        (:name org-mode :type melpa)
+        (:name org :type melpa)
         (:name yasnippet :type melpa)
         (:name expand-region :type melpa)))
 (el-get 'sync)
