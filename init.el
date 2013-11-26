@@ -21,7 +21,10 @@
 ;; Get some better-defaults! Added as git submodule
 (add-to-list 'load-path "~/.emacs.d/better-defaults/")
 (add-to-list 'load-path "~/.emacs.d/vendor/js2-mode/")
+(add-to-list 'load-path "~/.emacs.d/vendor/helm/")
 (require 'better-defaults)
+(require 'helm-config)
+(helm-mode 1)
 
 ;; Grabbin' Emacs 24 packaging 
 (require 'package)
@@ -56,14 +59,13 @@
         (:name coffee-mode :type elpa)
         (:name flycheck :type marmalade)
         (:name smooth-scrolling :type elpa)
-        (:name find-file-in-project :type marmalade)
         (:name git-commit-mode :type melpa)
         (:name js2-mode :type melpa)
         (:name smex :type melpa)
-        (:name nrepl :type melpa)
         (:name org :type melpa)
         (:name yasnippet :type melpa)
-        (:name expand-region :type melpa)))
+        (:name expand-region :type melpa)
+        (:name skewer-mode :type melpa)))
 (el-get 'sync)
 
 (unless (package-installed-p 'zenburn-theme)
@@ -84,7 +86,11 @@
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
+
+(add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojure-mode))
+(add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
 
 ;; A more helpful M-x
 (require 'smex)
@@ -159,8 +165,8 @@ point reaches the beginning or end of buffer, stop."
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
 
-;; Set C-x f as binding for find-file-in-project
-(global-set-key (kbd "C-x f") 'find-file-in-project)
+;; Set C-x f as binding for helm-find-files
+(global-set-key (kbd "C-x f") 'helm-find-files)
 
 ;; Highlight comment annotations
 (defun font-lock-comment-annotations ()
