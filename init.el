@@ -21,18 +21,10 @@
 ;; Get some better-defaults! Added as git submodule
 (add-to-list 'load-path "~/.emacs.d/better-defaults/")
 (add-to-list 'load-path "~/.emacs.d/vendor/js2-mode/")
-(add-to-list 'load-path "~/.emacs.d/vendor/helm/")
 (require 'better-defaults)
-(require 'helm-config)
-(helm-mode 1)
 
-;; Grabbin' Emacs 24 packaging 
 (require 'package)
 (setq package-archives (cons '("tromey" . "http://tromey.com/elpa/") package-archives))
-
-;; Use el-get
-(add-to-list 'load-path "~/.emacs.d/el-get/")
-(require 'el-get)
 
 ;; Adding additional package directories
 (add-to-list 'package-archives
@@ -44,33 +36,39 @@
 (package-initialize)
 
 ;; Grab all yo packages
-(setq el-get-sources
-      '((:name ruby-mode
-               :type elpa
-               :load "ruby-mode.el")
-        (:name inf-ruby :type elpa)
-        (:name css-mode :type elpa)
-        (:name haml-mode :type elpa)
-        (:name magit :type marmalade)
-        (:name sass-mode :type elpa)
-        (:name scss-mode :type elpa)
-        (:name undo-tree :type elpa)
-        (:name smex :type elpa)
-        (:name coffee-mode :type elpa)
-        (:name flycheck :type marmalade)
-        (:name smooth-scrolling :type elpa)
-        (:name git-commit-mode :type melpa)
-        (:name js2-mode :type melpa)
-        (:name smex :type melpa)
-        (:name org :type melpa)
-        (:name yasnippet :type melpa)
-        (:name expand-region :type melpa)
-        (:name skewer-mode :type melpa)))
-(el-get 'sync)
+;; (setq el-get-sources
+;;       '((:name ruby-mode
+;;                :type elpa
+;;                :load "ruby-mode.el")
+;;         (:name inf-ruby :type elpa)
+;;         (:name css-mode :type elpa)
+;;         (:name haml-mode :type elpa)
+;;         (:name magit :type marmalade)
+;;         (:name sass-mode :type elpa)
+;;         (:name scss-mode :type elpa)
+;;         (:name undo-tree :type elpa)
+;;         (:name smex :type elpa)
+;;         (:name coffee-mode :type elpa)
+;;         (:name smooth-scrolling :type elpa)
+;;         (:name git-commit-mode :type melpa)
+;;         (:name smex :type melpa)
+;;         (:name org :type melpa)
+;;         (:name yasnippet :type melpa)
+;;         (:name expand-region :type melpa)
+;;         (:name skewer-mode :type melpa)
+;;         (:name projectile :type elpa)))
+;; (el-get 'sync)
 
 (unless (package-installed-p 'zenburn-theme)
   (package-install 'zenburn-theme))
 (load-theme 'zenburn t)
+
+(if (package-installed-p 'flx-ido)
+  (flx-ido-mode 1)
+  (setq ido-use-faces nil))
+
+(projectile-global-mode)
+(global-set-key (kbd "C-x f") 'projectile-find-file)
 
 (defun byte-recompile ()
   (interactive)
@@ -82,7 +80,6 @@
 (setq scss-compile-at-save nil)
 (setq css-indent-offset 2)
 
-(require 'json)
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
@@ -138,9 +135,6 @@ Position the cursor and it's beginning, according to the current mode"
 
 (global-set-key (kbd "M-S") 'magit-status)
 
-;; Yas global mode
-(setq yas-global-mode 1)
-
 (defun smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
 Move point to the first non-whitespace character on this line.
@@ -164,17 +158,6 @@ point reaches the beginning or end of buffer, stop."
 ;; Remap C-a to `smarter-move-beginning-of-line`
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
-
-;; Set C-x f as binding for helm-find-files
-(global-set-key (kbd "C-x f") 'helm-find-files)
-
-;; Highlight comment annotations
-(defun font-lock-comment-annotations ()
-  "Highlight a bunch of well known comment annotations"
-  (font-lock-add-keywords nil
-                          '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|OPTIMIZE\\|HACK\\|REFACTOR\\):" 1 font-lock-warning-face t))))
-
-(add-hook 'prog-mode-hook 'font-lock-comment-annotations)
 
  ;; Highlight current line
 (global-hl-line-mode 1)
