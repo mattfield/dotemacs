@@ -1,9 +1,6 @@
 [submodule "better-defaults"]
 	path = better-defaults
 	url = https://github.com/technomancy/better-defaults.git
-[submodule "el-get"]
-	path = el-get
-	url = git://github.com/dimitri/el-get.git
 [submodule "expand-region"]
 	path = expand-region
 	url = https://github.com/magnars/expand-region.el.git
