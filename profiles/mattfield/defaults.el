@@ -49,8 +49,15 @@
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 
-;; Use yasnippets!
+;; Use yasnippets EVERYWHERE!
 (yas-global-mode 1)
 
-;; Delete mode ACTIVATE
+;; Expand region delete mode ACTIVATE
 (pending-delete-mode t)
+
+;; flx-ido + projectile = \o/
+(flx-ido-mode 1)
+(setq ido-use-faces nil)
+
+;; Beef-up Emacs GC threshold
+(setq gc-cons-threshold 20000000)

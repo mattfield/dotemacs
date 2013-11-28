@@ -33,6 +33,3 @@
 (smex-initialize)
 
 (load "mattfield/profile")
-(provide 'init)
-
-;;; init.el ends here
