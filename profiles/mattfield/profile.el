@@ -1,4 +1,5 @@
-(use-packages coffee-mode
+(use-packages better-defaults
+              coffee-mode
               css-mode
               dash
               expand-region

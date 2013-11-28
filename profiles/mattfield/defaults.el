@@ -51,3 +51,6 @@
 
 ;; Use yasnippets!
 (yas-global-mode 1)
+
+;; Delete mode ACTIVATE
+(pending-delete-mode t)

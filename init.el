@@ -1,10 +1,7 @@
 ;; Will probably need altering machine-dependant 
 (push "/opt/boxen/homebrew/bin" exec-path)
 
-(add-to-list 'load-path "~/.emacs.d/better-defaults/")
-(add-to-list 'load-path "~/.emacs.d/vendor/js2-mode/")
 (add-to-list 'load-path "~/.emacs.d/profiles/")
-(require 'better-defaults)
 
 (require 'package)
 (setq package-archives (cons '("tromey" . "http://tromey.com/elpa/") package-archives))
@@ -34,12 +31,6 @@
 ;; A more helpful M-x
 (require 'smex)
 (smex-initialize)
-
-;; Expand region (SO GOOD)
-(add-to-list 'load-path "~/.emacs.d/expand-region/")
-(require 'expand-region)
-(global-set-key (kbd "C-\\") 'er/expand-region)
-(pending-delete-mode t)
 
 (load "mattfield/profile")
 (provide 'init)

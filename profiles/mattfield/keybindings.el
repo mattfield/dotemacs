@@ -20,3 +20,6 @@
 
 ;; Vim-style line collapsing
 (global-set-key "\C-k" 'kill-and-join-forward)
+
+;; Expand region
+(global-set-key (kbd "C-\\") 'er/expand-region)
