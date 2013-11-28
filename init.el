@@ -1,26 +1,9 @@
 ;; Will probably need altering machine-dependant 
 (push "/opt/boxen/homebrew/bin" exec-path)
 
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-(setq-default c-basic-offset 2)
-(setq-default default-tab-width 2)
-(setq-default indent-tabs-mode nil)
-(setq inhibit-startup-message nil)
-
-(fset 'yes-or-no-p 'y-or-n-p)
-
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(blink-cursor-mode t)
-(show-paren-mode t)
-(column-number-mode t)
-(set-fringe-style -1)
-(tooltip-mode -1)
-
-;; Get some better-defaults! Added as git submodule
 (add-to-list 'load-path "~/.emacs.d/better-defaults/")
 (add-to-list 'load-path "~/.emacs.d/vendor/js2-mode/")
+(add-to-list 'load-path "~/.emacs.d/profiles/")
 (require 'better-defaults)
 
 (require 'package)
@@ -35,142 +18,22 @@
 ;; init package with all package repos
 (package-initialize)
 
-;; Grab all yo packages
-;; (setq el-get-sources
-;;       '((:name ruby-mode
-;;                :type elpa
-;;                :load "ruby-mode.el")
-;;         (:name inf-ruby :type elpa)
-;;         (:name css-mode :type elpa)
-;;         (:name haml-mode :type elpa)
-;;         (:name magit :type marmalade)
-;;         (:name sass-mode :type elpa)
-;;         (:name scss-mode :type elpa)
-;;         (:name undo-tree :type elpa)
-;;         (:name smex :type elpa)
-;;         (:name coffee-mode :type elpa)
-;;         (:name smooth-scrolling :type elpa)
-;;         (:name git-commit-mode :type melpa)
-;;         (:name smex :type melpa)
-;;         (:name org :type melpa)
-;;         (:name yasnippet :type melpa)
-;;         (:name expand-region :type melpa)
-;;         (:name skewer-mode :type melpa)
-;;         (:name projectile :type elpa)))
-;; (el-get 'sync)
+(defun packages-install (package-list)
+  "Installs and updates all of the packages listed."
+  (message "Refreshing the packages...")
+  (dolist (package package-list)
+    (when (not (package-installed-p package))
+      (package-install package)))
+    (message "Packages updated successfully."))
 
-(unless (package-installed-p 'zenburn-theme)
-  (package-install 'zenburn-theme))
+(defmacro use-packages (&rest package-list)
+  `(packages-install '(,@package-list)))
+
 (load-theme 'zenburn t)
-
-(if (package-installed-p 'flx-ido)
-  (flx-ido-mode 1)
-  (setq ido-use-faces nil))
-
-(projectile-global-mode)
-(global-set-key (kbd "C-x f") 'projectile-find-file)
-
-(defun byte-recompile ()
-  (interactive)
-  (byte-recompile-directory "~/.emacs.d" 0))
-
-;; Use scss-mode instead of sass-mode for SCSS files
-(autoload 'scss-mode "scss-mode")
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
-(setq scss-compile-at-save nil)
-(setq css-indent-offset 2)
-
-(autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
-
-(add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojure-mode))
-(add-hook 'clojure-mode-hook 'paredit-mode)
-(add-hook 'cider-repl-mode-hook 'paredit-mode)
 
 ;; A more helpful M-x
 (require 'smex)
 (smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-
-;; Ensure .coffee files use coffee-mode
-(add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
-(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-
-;; coffee-mode
-(defun coffee-custom ()
-  "coffee-mode hook"
-  (make-local-variable 'tab-width)
-  (set 'tab-width 2)
-  (set 'coffee-tab-width 2))
-(add-hook 'coffee-mode-hook
-          '(lambda() (coffee-custom)))
-
-;; Set RET to newline AND indent
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
-(defun smart-open-line ()
-  "Insert an empty line after the current line.
-Position the cursor at its beginning, according to the current mode"
-  (interactive)
-  (move-end-of-line nil)
-  (newline-and-indent))
-
-;;(global-set-key [(shift return)] 'smart-open-line)
-(global-set-key (kbd "M-o") 'smart-open-line)
-
-(defun smart-open-line-above ()
-  "Insert an empty line above the current line.
-Position the cursor and it's beginning, according to the current mode"
-  (interactive)
-  (move-beginning-of-line nil)
-  (newline-and-indent)
-  (forward-line -1)
-  (indent-according-to-mode))
-
-(global-set-key [(control shift return)] 'smart-open-line-above)
-(global-set-key (kbd "M-O") 'smart-open-line-above)
-
-(global-set-key (kbd "M-S") 'magit-status)
-
-(defun smarter-move-beginning-of-line (arg)
-  "Move point back to indentation of beginning of line.
-Move point to the first non-whitespace character on this line.
-If point is already there, move to beginning of the line.
-Toggle between first non-whitespace character and beginning of line.
-If ARG is !nil or 1, move forward ARG - 1 lines first. If
-point reaches the beginning or end of buffer, stop."
-  (interactive "^p")
-  (setq arg (or arg 1))
-
-  ;; Move lines first
-  (when (/= arg 1)
-    (let ((line-move-visual nil))
-      (forward-line (1- arg))))
-
-  (let ((orig-point (point)))
-    (back-to-indentation)
-    (when (= orig-point (point))
-      (move-beginning-of-line 1))))
-
-;; Remap C-a to `smarter-move-beginning-of-line`
-(global-set-key [remap move-beginning-of-line]
-                'smarter-move-beginning-of-line)
-
- ;; Highlight current line
-(global-hl-line-mode 1)
-
-;; Auto refresh buffers!
-(global-auto-revert-mode 1)
-
-;; Lines should be 80 characters wide
-(setq fill-column 80)
-
-;; Nic says eval-expression-print-level needs to be set to nil (turned off) so
-;; that you can always see what's happening.
-(setq eval-expression-print-level nil)
 
 ;; Expand region (SO GOOD)
 (add-to-list 'load-path "~/.emacs.d/expand-region/")
@@ -178,32 +41,7 @@ point reaches the beginning or end of buffer, stop."
 (global-set-key (kbd "C-\\") 'er/expand-region)
 (pending-delete-mode t)
 
-(defun kill-and-join-forward (&optional arg)
-  "Normally, killing the newline between indented lines doesn't
-remove extra spaces caused by indentation. This fixes that"
-  (interactive "P")
-  (if (and (eolp) (not (bolp)))
-      (progn (forward-char 1)
-             (just-one-space 0)
-             (backward-char 1)
-             (kill-line arg))
-    (kill-line arg)))
-
-(global-set-key "\C-k" 'kill-and-join-forward)
-
-(dolist (command '(yank yank-pop))
-  (eval '(defadvice command (after indent-region activate)
-           (and (not current-prefix-arg)
-                (member major-mode '(emacs-lisp mode lisp-mode
-                                                clojure-mode scheme-mode
-                                                haskell-mode ruby-mode
-                                                rspec-mode   python-mode
-                                                c-mode       plain-text-mode
-                                                js2-mode     html-mode
-                                                coffee-mode  haml-mode))
-                (let ((mark-even-if-inactive transient-mark-mode))
-                  (indent-region (region-beginning) (region-end) nil))))))
-
+(load "mattfield/profile")
 (provide 'init)
 
 ;;; init.el ends here
