@@ -1,4 +1,5 @@
 (use-packages better-defaults
+              cider
               coffee-mode
               css-mode
               dash

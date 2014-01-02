@@ -7,6 +7,13 @@
 (add-hook 'coffee-mode-hook
           '(lambda() (coffee-custom)))
 
+;; scss-mode
+(defun scss-custom ()
+  "scss-mode hook"
+  (setq 'css-indent-offset 2)
+  (setq 'css-indent-level 2))
+(add-hook 'scss-mode-hook 'scss-custom)
+
 (defun smart-open-line ()
   "Insert an empty line after the current line.
 Position the cursor at its beginning, according to the current mode"
