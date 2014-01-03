@@ -1,4 +1,4 @@
-;; Will probably need altering machine-dependant 
+;; Will probably need altering machine-dependant
 (push "/opt/boxen/homebrew/bin" exec-path)
 
 (add-to-list 'load-path "~/.emacs.d/profiles/")
@@ -21,7 +21,7 @@
   (dolist (package package-list)
     (when (not (package-installed-p package))
       (package-install package)))
-    (message "Packages updated successfully."))
+  (message "Packages updated successfully."))
 
 (defmacro use-packages (&rest package-list)
   `(packages-install '(,@package-list)))
