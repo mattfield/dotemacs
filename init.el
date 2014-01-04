@@ -1,5 +1,5 @@
 ;; Will probably need altering machine-dependant
-(push "/opt/boxen/homebrew/bin" exec-path)
+(push "/usr/local/bin" exec-path)
 
 (add-to-list 'load-path "~/.emacs.d/profiles/")
 
