@@ -26,10 +26,4 @@
 (defmacro use-packages (&rest package-list)
   `(packages-install '(,@package-list)))
 
-(load-theme 'zenburn t)
-
-;; A more helpful M-x
-(require 'smex)
-(smex-initialize)
-
 (load "mattfield/profile")

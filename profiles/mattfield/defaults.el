@@ -60,3 +60,13 @@
 
 ;; Beef-up Emacs GC threshold
 (setq gc-cons-threshold 20000000)
+
+(setq clojure-defun-style-default-indent t)
+
+(load-theme 'zenburn t)
+
+;; A more helpful M-x
+(require 'smex)
+(smex-initialize)
+
+

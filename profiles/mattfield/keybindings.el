@@ -6,7 +6,7 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; More useful line indenting and line opening
-(define-key global-map (kbd "RET") 'newline-and-indent)
+;; (define-key global-map (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-o") 'smart-open-line)
 (global-set-key [(control shift return)] 'smart-open-line-above)
 (global-set-key (kbd "M-O") 'smart-open-line-above)

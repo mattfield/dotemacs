@@ -1,6 +1,7 @@
 (use-packages better-defaults
               cider
               coffee-mode
+              color-theme-sanityinc-tomorrow
               css-mode
               dash
               expand-region
