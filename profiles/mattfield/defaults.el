@@ -63,7 +63,7 @@
 
 (setq clojure-defun-style-default-indent t)
 
-(load-theme 'zenburn t)
+(load-theme 'sanityinc-tomorrow-night t)
 
 ;; A more helpful M-x
 (require 'smex)

@@ -64,7 +64,8 @@ remove extra spaces caused by indentation. This fixes that"
 (dolist (command '(yank yank-pop))
   (eval '(defadvice command (after indent-region activate)
            (and (not current-prefix-arg)
-                (member major-mode '(emacs-lisp mode lisp-mode
+                (member major-mode '(emacs-lisp-mode lisp-mode
+                                                js2-mode     scss-mode
                                                 clojure-mode scheme-mode
                                                 haskell-mode ruby-mode
                                                 rspec-mode   python-mode
