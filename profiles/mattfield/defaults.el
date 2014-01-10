@@ -15,6 +15,9 @@
 (set-fringe-style -1)
 (tooltip-mode -1)
 
+;; Turn off warning bells entirely in Emacs.App
+(setq ring-bell-function 'ignore)
+
  ;; Highlight current line
 (global-hl-line-mode 1)
 
@@ -40,7 +43,6 @@
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
 
-(add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojure-mode))
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
@@ -68,5 +70,4 @@
 ;; A more helpful M-x
 (require 'smex)
 (smex-initialize)
-
 
