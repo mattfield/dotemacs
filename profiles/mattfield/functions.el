@@ -74,3 +74,11 @@ remove extra spaces caused by indentation. This fixes that"
                                                 coffee-mode  haml-mode))
                 (let ((mark-even-if-inactive transient-mark-mode))
                   (indent-region (region-beginning) (region-end) nil))))))
+
+(defun copy-line-or-region ()
+  "Copy current line or current selection"
+  (interactive)
+  (if (region-active-p)
+      (kill-ring-save (region-beginning) (region-end))
+    (kill-ring-save (line-beginning-position (line-beginning-position 2)))))
+
