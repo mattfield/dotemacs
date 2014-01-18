@@ -65,13 +65,13 @@ remove extra spaces caused by indentation. This fixes that"
   (eval '(defadvice command (after indent-region activate)
            (and (not current-prefix-arg)
                 (member major-mode '(emacs-lisp-mode lisp-mode
-                                                js2-mode     scss-mode
-                                                clojure-mode scheme-mode
-                                                haskell-mode ruby-mode
-                                                rspec-mode   python-mode
-                                                c-mode       plain-text-mode
-                                                js2-mode     html-mode
-                                                coffee-mode  haml-mode))
+                                                     js2-mode     scss-mode
+                                                     clojure-mode scheme-mode
+                                                     haskell-mode ruby-mode
+                                                     rspec-mode   python-mode
+                                                     c-mode       plain-text-mode
+                                                     js2-mode     html-mode
+                                                     coffee-mode  haml-mode))
                 (let ((mark-even-if-inactive transient-mark-mode))
                   (indent-region (region-beginning) (region-end) nil))))))
 
@@ -82,3 +82,8 @@ remove extra spaces caused by indentation. This fixes that"
       (kill-ring-save (region-beginning) (region-end))
     (kill-ring-save (line-beginning-position (line-beginning-position 2)))))
 
+(defun reindent-whole-buffer ()
+  "Reindent the whole buffer"
+  (interactive)
+  (indent-region (point-min)
+                 (point-max)))
