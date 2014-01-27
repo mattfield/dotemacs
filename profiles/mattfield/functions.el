@@ -10,8 +10,8 @@
 ;; scss-mode
 (defun scss-custom ()
   "scss-mode hook"
-  (setq 'css-indent-offset 2)
-  (setq 'css-indent-level 2))
+  (setq css-indent-offset 2)
+  (setq css-indent-level 2))
 (add-hook 'scss-mode-hook 'scss-custom)
 
 (defun smart-open-line ()
