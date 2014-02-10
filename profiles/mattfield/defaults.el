@@ -47,7 +47,9 @@
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
 
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'clojure-mode-hook 'pretty-lambda)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
 ;; Ensure .coffee files use coffee-mode
