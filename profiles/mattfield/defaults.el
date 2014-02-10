@@ -18,7 +18,7 @@
 ;; Turn off warning bells entirely in Emacs.App
 (setq ring-bell-function 'ignore)
 
- ;; Highlight current line
+;; Highlight current line
 (global-hl-line-mode 1)
 
 ;; Auto refresh buffers!
@@ -32,6 +32,10 @@
 (setq eval-expression-print-level nil)
 
 (projectile-global-mode)
+
+;; Pretty lambdas!
+(require 'pretty-lambdada)
+(pretty-lambda-for-modes)
 
 ;; Use scss-mode instead of sass-mode for SCSS files
 (autoload 'scss-mode "scss-mode")
@@ -70,4 +74,3 @@
 ;; A more helpful M-x
 (require 'smex)
 (smex-initialize)
-
