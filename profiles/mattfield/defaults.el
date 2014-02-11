@@ -3,7 +3,7 @@
 (setq-default c-basic-offset 2)
 (setq-default default-tab-width 2)
 (setq-default indent-tabs-mode nil)
-(setq inhibit-startup-message nil)
+(setq inhibit-startup-message t)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 

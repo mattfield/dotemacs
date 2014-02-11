@@ -11,14 +11,14 @@
               magit
               org
               paredit
+              pretty-lambdada
               projectile
               sass-mode
               scss-mode
               skewer-mode
               smex
               smooth-scrolling
-              yasnippet
-              zenburn-theme)
+              yasnippet)
 
 (load "mattfield/defaults")
 (load "mattfield/functions")
