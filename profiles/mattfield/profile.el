@@ -16,6 +16,7 @@
               sass-mode
               scss-mode
               skewer-mode
+              smart-mode-line
               smex
               smooth-scrolling
               yasnippet)

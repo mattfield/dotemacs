@@ -76,3 +76,8 @@
 ;; A more helpful M-x
 (require 'smex)
 (smex-initialize)
+
+(require 'smart-mode-line)
+(setq sml/theme 'dark)
+(add-to-list 'sml/replacer-regexp-list '("^~/.emacs.d/" ":ED:"))
+(sml/setup)
