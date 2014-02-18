@@ -81,3 +81,7 @@
 (setq sml/theme 'dark)
 (add-to-list 'sml/replacer-regexp-list '("^~/.emacs.d/" ":ED:"))
 (sml/setup)
+
+;; References Proof General
+;; (load-file "/usr/local/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+
