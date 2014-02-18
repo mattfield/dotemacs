@@ -11,8 +11,8 @@
 (global-set-key [(control shift return)] 'smart-open-line-above)
 (global-set-key (kbd "M-O") 'smart-open-line-above)
 
-;; Meta-S shortcut for Magit
-(global-set-key (kbd "M-S") 'magit-status)
+;; Shortcut for magit-status
+(global-set-key (kbd "C-c C-s") 'magit-status)
 
 ;; Remap C-a to `smarter-move-beginning-of-line`
 (global-set-key [remap move-beginning-of-line]
