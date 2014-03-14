@@ -12,7 +12,7 @@
 (global-set-key (kbd "M-O") 'smart-open-line-above)
 
 ;; Shortcut for magit-status
-(global-set-key (kbd "C-c C-s") 'magit-status)
+(global-set-key (kbd "C-c m s") 'magit-status)
 
 ;; Remap C-a to `smarter-move-beginning-of-line`
 (global-set-key [remap move-beginning-of-line]
