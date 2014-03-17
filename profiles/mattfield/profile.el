@@ -13,6 +13,7 @@
               paredit
               pretty-lambdada
               projectile
+              quack
               sass-mode
               scss-mode
               skewer-mode

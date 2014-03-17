@@ -83,6 +83,8 @@
 (add-to-list 'sml/replacer-regexp-list '("^~/.emacs.d/" ":ED:"))
 (sml/setup)
 
+(require 'quack)
+
 ;; Because you should never use OSX native fullscreen <10.9
 (setq ns-use-native-fullscreen nil)
 
