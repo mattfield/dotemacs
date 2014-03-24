@@ -58,7 +58,7 @@
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 
 ;; Use yasnippets EVERYWHERE!
-(yas-global-mode 1)
+;; (yas-global-mode 1)
 
 ;; Expand region delete mode ACTIVATE
 (pending-delete-mode t)

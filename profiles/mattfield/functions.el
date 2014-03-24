@@ -14,6 +14,12 @@
   (setq css-indent-level 2))
 (add-hook 'scss-mode-hook 'scss-custom)
 
+;; livescript-mode
+(defun livescript-custom ()
+  "livescript-mode-hook"
+  (set 'livescript-tab-width 2))
+(add-hook 'livescript-mode-hook 'livescript-custom)
+
 (defun smart-open-line ()
   "Insert an empty line after the current line.
 Position the cursor at its beginning, according to the current mode"
