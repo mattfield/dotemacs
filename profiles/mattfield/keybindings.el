@@ -26,3 +26,10 @@
 
 (global-set-key (kbd "M-Q") 'reindent-whole-buffer)
 
+;; Copy to system clipboard
+(defun copy-to-system-clipboard ()
+  (interactive)
+  (shell-command-on-region (region-beginning) (region-end) "pbcopy"))
+
+(global-set-key (kbd "C-M-c") 'copy-to-system-clipboard)
+

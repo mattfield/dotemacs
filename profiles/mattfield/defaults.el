@@ -96,4 +96,3 @@
 
 ;; References Proof General
 ;; (load-file "/usr/local/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
-
