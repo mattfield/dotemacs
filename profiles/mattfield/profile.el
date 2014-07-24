@@ -8,6 +8,7 @@
               flx-ido
               haml-mode
               js2-mode
+              livescript-mode
               magit
               org
               paredit

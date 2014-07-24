@@ -33,3 +33,4 @@
 
 (global-set-key (kbd "C-M-c") 'copy-to-system-clipboard)
 
+(define-key clojure-mode-map (kbd "C-c r") 'cider-namespace-refresh)

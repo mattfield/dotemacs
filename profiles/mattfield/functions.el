@@ -93,3 +93,9 @@ remove extra spaces caused by indentation. This fixes that"
   (interactive)
   (indent-region (point-min)
                  (point-max)))
+
+(defun cider-namespace-refresh ()
+  (interactive)
+  (cider-interactive-eval
+   "(require 'clojure.tools.namespace.repl)
+    (clojure.tools.namespace.repl/refresh)"))
