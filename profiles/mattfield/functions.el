@@ -99,3 +99,4 @@ remove extra spaces caused by indentation. This fixes that"
   (cider-interactive-eval
    "(require 'clojure.tools.namespace.repl)
     (clojure.tools.namespace.repl/refresh)"))
+
