@@ -78,3 +78,4 @@
 
 (load "mattfield/profile")
 
+(color-theme-approximate-on)

@@ -2,6 +2,7 @@
               cider
               coffee-mode
               color-theme-sanityinc-tomorrow
+              color-theme-approximate
               clojure-mode
               clojurescript-mode
               css-mode
