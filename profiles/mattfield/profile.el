@@ -1,6 +1,5 @@
 (use-packages better-defaults
               cider
-              coffee-mode
               color-theme-sanityinc-tomorrow
               color-theme-approximate
               clojure-mode
@@ -13,16 +12,11 @@
               git-rebase-mode
               flx-ido
               haml-mode
-              js2-mode
-              livescript-mode
               magit
               org
               paredit
               pretty-lambdada
               projectile
-              quack
-              sass-mode
-              scss-mode
               skewer-mode
               smart-mode-line
               smex

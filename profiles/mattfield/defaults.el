@@ -7,12 +7,12 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(scroll-bar-mode -1)
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (tool-bar-mode -1)
 (blink-cursor-mode t)
 (show-paren-mode t)
 (column-number-mode t)
-(set-fringe-style -1)
+(if (fboundp 'fridge-mode) (set-fringe-style -1))
 (tooltip-mode -1)
 
 ;; Turn off warning bells entirely in Emacs.App
