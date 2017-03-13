@@ -36,13 +36,16 @@
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
-   (vector "#c5c8c6" "#cc6666" "#b5bd68" "#f0c674" "#81a2be" "#b294bb" "#8abeb7" "#1d1f21"))
- '(custom-enabled-themes (quote (smart-mode-line-dark sanityinc-tomorrow-night)))
+   (vector "#c5c8c6" "#cc6666" "#b5bd68" "#f0c674" "#81a2be" "#b294bb" "#8abeb7" "#373b41"))
+ '(custom-enabled-themes (quote (smart-mode-line-dark)))
  '(custom-safe-themes
    (quote
-    ("3e7420b886a5ec5c4fd8328c4b1d9f0f9d5e49e60ee4d5fd9a228078affb3828" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default)))
- '(fci-rule-color "#282a2e")
+    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "3e7420b886a5ec5c4fd8328c4b1d9f0f9d5e49e60ee4d5fd9a228078affb3828" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" default)))
+ '(fci-rule-color "#373b41")
  '(js2-strict-inconsistent-return-warning nil)
+ '(package-selected-packages
+   (quote
+    (terraform-mode yasnippet smooth-scrolling smex smart-mode-line skewer-mode scss-mode sass-mode quack puppet-mode projectile pretty-lambdada paredit magit livescript-mode flx-ido expand-region evil-visual-mark-mode evil-matchit elm-mode dired+ color-theme-sanityinc-tomorrow color-theme-approximate coffee-mode clojurescript-mode cider better-defaults)))
  '(quack-fontify-style nil)
  '(quack-programs
    (quote
