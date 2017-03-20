@@ -45,7 +45,7 @@
  '(js2-strict-inconsistent-return-warning nil)
  '(package-selected-packages
    (quote
-    (terraform-mode yasnippet smooth-scrolling smex smart-mode-line skewer-mode scss-mode sass-mode quack puppet-mode projectile pretty-lambdada paredit magit livescript-mode flx-ido expand-region evil-visual-mark-mode evil-matchit elm-mode dired+ color-theme-sanityinc-tomorrow color-theme-approximate coffee-mode clojurescript-mode cider better-defaults)))
+    (yaml-mode terraform-mode yasnippet smooth-scrolling smex smart-mode-line skewer-mode scss-mode sass-mode quack puppet-mode projectile pretty-lambdada paredit magit livescript-mode flx-ido expand-region evil-visual-mark-mode evil-matchit elm-mode dired+ color-theme-sanityinc-tomorrow color-theme-approximate coffee-mode clojurescript-mode cider better-defaults)))
  '(quack-fontify-style nil)
  '(quack-programs
    (quote
