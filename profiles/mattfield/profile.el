@@ -4,7 +4,6 @@
               dash
               dired+
               expand-region
-              evil-mode
               evil-visual-mark-mode
               evil-matchit
               flx-ido

@@ -1,18 +1,18 @@
 ;; coffee-mode
-(defun coffee-custom ()
-  "coffee-mode hook"
-  (make-local-variable 'tab-width)
-  (set 'tab-width 2)
-  (set 'coffee-tab-width 2))
-(add-hook 'coffee-mode-hook
-          '(lambda() (coffee-custom)))
+;(defun coffee-custom ()
+  ;"coffee-mode hook"
+  ;(make-local-variable 'tab-width)
+  ;(set 'tab-width 2)
+  ;(set 'coffee-tab-width 2))
+;(add-hook 'coffee-mode-hook
+          ;'(lambda() (coffee-custom)))
 
 ;; scss-mode
-(defun scss-custom ()
-  "scss-mode hook"
-  (setq css-indent-offset 2)
-  (setq css-indent-level 2))
-(add-hook 'scss-mode-hook 'scss-custom)
+;(defun scss-custom ()
+  ;"scss-mode hook"
+  ;(setq css-indent-offset 2)
+  ;(setq css-indent-level 2))
+;(add-hook 'scss-mode-hook 'scss-custom)
 
 ;; livescript-mode
 ;; (defun livescript-custom ()
@@ -74,6 +74,7 @@ remove extra spaces caused by indentation. This fixes that"
                                                      js2-mode     scss-mode
                                                      clojure-mode scheme-mode
                                                      haskell-mode ruby-mode
+                                                     go-mode      terraform-mode
                                                      rspec-mode   python-mode
                                                      c-mode       plain-text-mode
                                                      js2-mode     html-mode
@@ -94,9 +95,9 @@ remove extra spaces caused by indentation. This fixes that"
   (indent-region (point-min)
                  (point-max)))
 
-(defun cider-namespace-refresh ()
-  (interactive)
-  (cider-interactive-eval
-   "(require 'clojure.tools.namespace.repl)
-    (clojure.tools.namespace.repl/refresh)"))
+;(defun cider-namespace-refresh ()
+  ;(interactive)
+  ;(cider-interactive-eval
+   ;"(require 'clojure.tools.namespace.repl)
+    ;(clojure.tools.namespace.repl/refresh)"))
 

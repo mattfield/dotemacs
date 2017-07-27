@@ -37,32 +37,6 @@
 (require 'pretty-lambdada)
 (pretty-lambda-for-modes)
 
-;; Use scss-mode instead of sass-mode for SCSS files
-(autoload 'scss-mode "scss-mode")
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
-(setq scss-compile-at-save nil)
-
-(autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
-
-;; Livescript mode
-(add-to-list 'load-path "~/.emacs.d/packages/custom/livescript-mode/")
-(require 'livescript-mode)
-(add-to-list 'auto-mode-alist '("\\.ls\\'" . livescript-mode))
-
-(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
-(add-hook 'clojure-mode-hook 'paredit-mode)
-(add-hook 'clojure-mode-hook 'pretty-lambda)
-(add-hook 'scheme-mode-hook 'pretty-lambda)
-(add-hook 'cider-repl-mode-hook 'paredit-mode)
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-
-;; Ensure .coffee files use coffee-mode
-(add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
-(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-
 ;; Use yasnippets EVERYWHERE!
 ;; (yas-global-mode 1)
 
@@ -76,8 +50,6 @@
 ;; Beef-up Emacs GC threshold
 (setq gc-cons-threshold 20000000)
 
-(setq clojure-defun-style-default-indent t)
-
 (load-theme 'sanityinc-tomorrow-night t)
 
 ;; A more helpful M-x
@@ -89,10 +61,5 @@
 (add-to-list 'sml/replacer-regexp-list '("^~/.emacs.d/" ":ED:"))
 (sml/setup)
 
-;; (require 'quack)
-
 ;; Because you should never use OSX native fullscreen <10.9
 (setq ns-use-native-fullscreen nil)
-
-;; References Proof General
-;; (load-file "/usr/local/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")

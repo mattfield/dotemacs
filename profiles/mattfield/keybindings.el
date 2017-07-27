@@ -33,4 +33,4 @@
 
 (global-set-key (kbd "C-M-c") 'copy-to-system-clipboard)
 
-(global-set-key (kbd "C-c r") 'cider-namespace-refresh)
+;(global-set-key (kbd "C-c r") 'cider-namespace-refresh)
