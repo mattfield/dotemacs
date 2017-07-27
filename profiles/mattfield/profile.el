@@ -5,8 +5,10 @@
               dired+
               expand-region
               exec-path-from-shell
+              evil
               evil-magit
               evil-matchit
+              evil-org
               evil-visual-mark-mode
               flx-ido
               go-mode
