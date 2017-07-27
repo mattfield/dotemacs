@@ -8,6 +8,7 @@
               evil-visual-mark-mode
               evil-matchit
               flx-ido
+              go-mode
               magit
               org
               paredit
