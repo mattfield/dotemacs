@@ -9,10 +9,11 @@
 
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 (blink-cursor-mode t)
 (show-paren-mode t)
 (column-number-mode t)
-(if (fboundp 'fridge-mode) (set-fringe-style -1))
+(if (fboundp 'fringe-mode) (set-fringe-style -1))
 (tooltip-mode -1)
 
 ;; Turn off warning bells entirely in Emacs.App
