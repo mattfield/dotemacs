@@ -1,28 +1,25 @@
 (use-packages better-defaults
-              cider
               color-theme-sanityinc-tomorrow
               color-theme-approximate
-              clojure-mode
-              clojurescript-mode
-              css-mode
               dash
               dired+
               expand-region
-              git-commit-mode
-              git-rebase-mode
+              evil-mode
+              evil-visual-mark-mode
+              evil-matchit
               flx-ido
-              haml-mode
               magit
               org
               paredit
               pretty-lambdada
               projectile
-              skewer-mode
+              puppet-mode
               smart-mode-line
               smex
               smooth-scrolling
+              terraform-mode
               undo-tree
-              yasnippet)
+              yaml-mode)
 
 (load "mattfield/defaults")
 (load "mattfield/functions")
