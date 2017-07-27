@@ -4,8 +4,9 @@
               dash
               dired+
               expand-region
-              evil-visual-mark-mode
+              evil-magit
               evil-matchit
+              evil-visual-mark-mode
               flx-ido
               go-mode
               magit

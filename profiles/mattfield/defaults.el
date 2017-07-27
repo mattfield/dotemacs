@@ -63,3 +63,6 @@
 
 ;; Because you should never use OSX native fullscreen <10.9
 (setq ns-use-native-fullscreen nil)
+
+(require 'evil)
+(evil-mode 1)
