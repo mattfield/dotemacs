@@ -44,7 +44,7 @@
  '(fci-rule-color "#373b41")
  '(package-selected-packages
    (quote
-    (yaml-mode terraform-mode smooth-scrolling smex smart-mode-line puppet-mode projectile pretty-lambdada paredit magit go-mode flx-ido expand-region evil-visual-mark-mode evil-matchit dired+ color-theme-sanityinc-tomorrow color-theme-approximate better-defaults)))
+    (exec-path-from-shell yaml-mode terraform-mode smooth-scrolling smex smart-mode-line puppet-mode projectile pretty-lambdada paredit magit go-mode flx-ido expand-region evil-visual-mark-mode evil-matchit dired+ color-theme-sanityinc-tomorrow color-theme-approximate better-defaults)))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote

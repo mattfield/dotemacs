@@ -4,6 +4,7 @@
               dash
               dired+
               expand-region
+              exec-path-from-shell
               evil-magit
               evil-matchit
               evil-visual-mark-mode
