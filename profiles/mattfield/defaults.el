@@ -44,6 +44,10 @@
 ;; Expand region delete mode ACTIVATE
 (pending-delete-mode t)
 
+(ido-mode 1)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+
 ;; flx-ido + projectile = \o/
 (flx-ido-mode 1)
 (setq ido-use-faces nil)
@@ -51,11 +55,15 @@
 ;; Beef-up Emacs GC threshold
 (setq gc-cons-threshold 20000000)
 
-(load-theme 'sanityinc-tomorrow-night t)
+;; (load-theme 'sanityinc-tomorrow- t)
+(load-theme 'dakrone t)
 
 ;; A more helpful M-x
 (require 'smex)
 (smex-initialize)
+
+(require 'smooth-scrolling)
+(smooth-scrolling-mode t)
 
 (require 'smart-mode-line)
 (setq sml/theme 'dark)
@@ -65,5 +73,5 @@
 ;; Because you should never use OSX native fullscreen <10.9
 (setq ns-use-native-fullscreen nil)
 
-(require 'evil)
-(evil-mode 1)
+;; (require 'evil)
+;; (evil-mode 1)

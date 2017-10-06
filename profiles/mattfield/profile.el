@@ -28,3 +28,5 @@
 (load "mattfield/defaults")
 (load "mattfield/functions")
 (load "mattfield/keybindings")
+
+(load "mattfield/org")

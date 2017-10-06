@@ -1,25 +1,3 @@
-;; coffee-mode
-;(defun coffee-custom ()
-  ;"coffee-mode hook"
-  ;(make-local-variable 'tab-width)
-  ;(set 'tab-width 2)
-  ;(set 'coffee-tab-width 2))
-;(add-hook 'coffee-mode-hook
-          ;'(lambda() (coffee-custom)))
-
-;; scss-mode
-;(defun scss-custom ()
-  ;"scss-mode hook"
-  ;(setq css-indent-offset 2)
-  ;(setq css-indent-level 2))
-;(add-hook 'scss-mode-hook 'scss-custom)
-
-;; livescript-mode
-;; (defun livescript-custom ()
-;;   "livescript-mode-hook"
-;;   (set 'livescript-indent-level 2))
-;; (add-hook 'livescript-mode-hook 'livescript-custom)
-
 (defun smart-open-line ()
   "Insert an empty line after the current line.
 Position the cursor at its beginning, according to the current mode"
@@ -94,10 +72,3 @@ remove extra spaces caused by indentation. This fixes that"
   (interactive)
   (indent-region (point-min)
                  (point-max)))
-
-;(defun cider-namespace-refresh ()
-  ;(interactive)
-  ;(cider-interactive-eval
-   ;"(require 'clojure.tools.namespace.repl)
-    ;(clojure.tools.namespace.repl/refresh)"))
-
