@@ -58,6 +58,7 @@
 ;; (load-theme 'sanityinc-tomorrow- t)
 (load-theme 'dakrone t)
 
+
 ;; A more helpful M-x
 (require 'smex)
 (smex-initialize)
