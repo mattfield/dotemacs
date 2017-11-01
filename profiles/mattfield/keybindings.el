@@ -1,10 +1,6 @@
 ;; Remap C-x f to use projectile's find file
 (global-set-key (kbd "C-x f") 'projectile-find-file)
 
-;; Meta-x uses smex, Meta-X reverts to default
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-
 ;; More useful line indenting and line opening
 ;; (define-key global-map (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-o") 'smart-open-line)
@@ -32,5 +28,3 @@
   (shell-command-on-region (region-beginning) (region-end) "pbcopy"))
 
 (global-set-key (kbd "C-M-c") 'copy-to-system-clipboard)
-
-;(global-set-key (kbd "C-c r") 'cider-namespace-refresh)

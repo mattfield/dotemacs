@@ -34,45 +34,23 @@
 
 (projectile-global-mode)
 
-;; Pretty lambdas!
-(require 'pretty-lambdada)
-(pretty-lambda-for-modes)
-
-;; Use yasnippets EVERYWHERE!
-;; (yas-global-mode 1)
-
 ;; Expand region delete mode ACTIVATE
 (pending-delete-mode t)
-
-(ido-mode 1)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-
-;; flx-ido + projectile = \o/
-(flx-ido-mode 1)
-(setq ido-use-faces nil)
 
 ;; Beef-up Emacs GC threshold
 (setq gc-cons-threshold 20000000)
 
 ;; (load-theme 'sanityinc-tomorrow- t)
 (load-theme 'dakrone t)
-
-
-;; A more helpful M-x
-(require 'smex)
-(smex-initialize)
+;; (load-theme 'misterioso t)
 
 (require 'smooth-scrolling)
 (smooth-scrolling-mode t)
 
 (require 'smart-mode-line)
-(setq sml/theme 'dark)
+(setq sml/theme 'respectful)
 (add-to-list 'sml/replacer-regexp-list '("^~/.emacs.d/" ":ED:"))
 (sml/setup)
 
 ;; Because you should never use OSX native fullscreen <10.9
 (setq ns-use-native-fullscreen nil)
-
-;; (require 'evil)
-;; (evil-mode 1)
