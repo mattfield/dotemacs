@@ -1,5 +1,5 @@
 ;; Remap C-x f to use projectile's find file
-(global-set-key (kbd "C-x f") 'projectile-find-file)
+(global-set-key (kbd "C-x f") 'counsel-recentf)
 
 ;; More useful line indenting and line opening
 ;; (define-key global-map (kbd "RET") 'newline-and-indent)

@@ -40,9 +40,8 @@
 ;; Beef-up Emacs GC threshold
 (setq gc-cons-threshold 20000000)
 
-;; (load-theme 'sanityinc-tomorrow- t)
-(load-theme 'dakrone t)
-;; (load-theme 'misterioso t)
+;; (load-theme 'dakrone t)
+(load-theme 'misterioso t)
 
 (require 'smooth-scrolling)
 (smooth-scrolling-mode t)
@@ -52,5 +51,15 @@
 (add-to-list 'sml/replacer-regexp-list '("^~/.emacs.d/" ":ED:"))
 (sml/setup)
 
+(require 'git-gutter+)
+(global-git-gutter+-mode)
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
 ;; Because you should never use OSX native fullscreen <10.9
 (setq ns-use-native-fullscreen nil)
+
+(add-hook 'json-mode-hook
+          (lambda ()
+            (setq json-reformat:indent-width 2)))

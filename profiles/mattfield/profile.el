@@ -7,8 +7,10 @@
               diminish
               expand-region
               exec-path-from-shell
+              git-gutter+
               go-mode
               ivy
+              json-mode
               magit
               org
               paredit
@@ -28,5 +30,4 @@
 (load "mattfield/functions")
 (load "mattfield/keybindings")
 (load "mattfield/ivy")
-
 (load "mattfield/org")

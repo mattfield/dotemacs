@@ -1,10 +1,12 @@
-(use-package ivy :ensure t
+(use-package ivy
+  :ensure t
   :diminish (ivy-mode . "")
   :demand
   :bind
   (:map ivy-mode-map
         ("C-'" . ivy-avy)
         ("C-s" . swiper)
+        ("C-r" . swiper)
         ("M-x" . counsel-M-x)
         ("C-x C-f" . counsel-find-file)
         ("C-c g" . counsel-git)
@@ -14,4 +16,4 @@
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
   (setq ivy-initial-inputs-alist nil)
-  (setq ivy-count-format "(%d/%d) "))
+  (setq ivy-count-format ""))

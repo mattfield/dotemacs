@@ -44,9 +44,11 @@
  '(fci-rule-color "#373b41")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(hl-sexp-background-color "#1c1f26")
+ '(js-indent-level 2)
+ '(org-agenda-files nil)
  '(package-selected-packages
    (quote
-    (darkburn-theme flatland-theme ample-zen-theme ample-theme sublime-themes material-theme dracula-theme markdown-mode avy counsel ivy dakrone-light-theme orgtbl-ascii-plot circe-notifications dakrone-theme es-mode dockerfile-mode slack helm-itunes helm-youtube helm-smex helm-make helm-gitignore helm-projectile helm helm-flx exec-path-from-shell yaml-mode terraform-mode smooth-scrolling smex smart-mode-line puppet-mode projectile pretty-lambdada paredit magit go-mode expand-region dired+ color-theme-sanityinc-tomorrow color-theme-approximate better-defaults)))
+    (magithub json-mode adoc-mode ox-asciidoc ascii asciidoc git-gutter+ darkburn-theme flatland-theme ample-zen-theme ample-theme sublime-themes material-theme dracula-theme markdown-mode avy counsel ivy dakrone-light-theme orgtbl-ascii-plot circe-notifications dakrone-theme es-mode dockerfile-mode slack exec-path-from-shell yaml-mode terraform-mode smooth-scrolling smex smart-mode-line puppet-mode projectile pretty-lambdada paredit magit go-mode expand-region dired+ color-theme-sanityinc-tomorrow color-theme-approximate better-defaults)))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
@@ -78,4 +80,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:background nil)))))
